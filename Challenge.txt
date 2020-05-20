@@ -1,0 +1,26 @@
+An imaginary bank is running a competition to win £1,000,000.
+You make a deposit on day one and another on day two.
+On day three the bank adds the two previous days balances together and that is now your new balance.
+They repeat this each day adding your previous two day’s balances together until your balance reaches
+or exceeds £1,000,000. If you get to 1,000,000 exactly you win the £1,000,000.
+
+If you go over you lose your initial deposits.
+Clearly to get to exactly £1,000,000 in a few days is easy assuming you have a lot of money to make your initial deposits.
+So the winner has to reach exactly £1,000,000 in the most number of days. 
+Your initial deposits can only be whole pounds, no pence.
+So the question is:
+What should your initial two deposits be in order to take the 
+longest to get to £1,000,000 and win the cash?
+
+day 1
+    pay in (ammout)
+    d1_balance = ammout
+day 2
+    pay in (amount)
+    d2_balance = d1_balance + amount
+day 3
+    bank pays in (d1_balance + d2_balance)
+    d3_balance = d2_balance + (d1_balance + d2_balance)
+day 4
+    bank pays in (d2_balance + d3_balance)
+    d4_balance = d3_balance + (d2_balance + d3_balance)

@@ -8,7 +8,7 @@ temp_success = []
 Success = [0, TARGET, TARGET]
 
 #split target 1%
-range_end = TARGET - int((TARGET / 100) * 99) #int(TARGET / 100)
+range_end = int(TARGET / 100) #TARGET - int((TARGET / 100) * 99)
 loop_start = []
 loop_end = []
 first_deposit = []
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     last_balance = balance
     balance = new_bal
     test_days += 1
-    print(f'Day: {test_days}, Balance: {balance}, Paid in: {bank_pays}')
+    print(f'Day: {test_days}, Balance: {balance}, Bank Paid in: {bank_pays}')
     #Bank takes over Days 4 +
     while balance < TARGET:
         bank_pays = last_balance + balance
@@ -98,6 +98,6 @@ if __name__ == "__main__":
         last_balance = balance
         balance = new_bal
         test_days += 1
-        print(f'Day: {test_days}, Balance: {balance}, Paid in: {bank_pays}')
+        print(f'Day: {test_days}, Balance: {balance}, Bank Paid in: {bank_pays}')
     finish = time.perf_counter()
     print(f'Single Calculation took {round(finish-finish_pt1, 2)} second(s)\nTotal Run time {round(finish-start, 2)} second(s)')
